@@ -1,4 +1,4 @@
-<h1 align="centre">AcidMusic</h1>
+<h1 align="centre">🦠AcidMusic🦠</h1>
 
 ### A bot that can play music on Telegram Group and Channel Voice Chats
 
