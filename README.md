@@ -3,7 +3,7 @@
 ### A bot that can play music on Telegram Group and Channel Voice Chats
 
 <p align="center">
-  <a href="https://github.com/idzero23/AcidMusic">
+  <a href="https://t.me/idzero_gr">
      <img height="30px" src="https://img.shields.io/badge/Group%20Music%20Bot-red?style=for-the-badge&logo=github">
   </a>
 </p>
