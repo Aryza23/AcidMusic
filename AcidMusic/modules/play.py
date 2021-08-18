@@ -8,37 +8,32 @@ import aiohttp
 import ffmpeg
 import requests
 import wget
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-from pyrogram import Client
-from pyrogram import filters
+from PIL import Image, ImageDraw, ImageFont
+from pyrogram import Client, filters
 from pyrogram.types import Voice
 from pyrogram.errors import UserAlreadyParticipant
-from pyrogram.types import InlineKeyboardButton
-from pyrogram.types import InlineKeyboardMarkup
-from pyrogram.types import Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
-from AcidMusic.config import ARQ_API_KEY
-from AcidMusic.config import BOT_NAME as bn
-from AcidMusic.config import DURATION_LIMIT
-from AcidMusic.config import UPDATES_CHANNEL as updateschannel
-from AcidMusic.config import que
-from AcidMusic.function.admins import admins as a
-from AcidMusic.helpers.admins import get_administrators
-from AcidMusic.helpers.channelmusic import get_chat_id
-from AcidMusic.helpers.decorators import errors
-from AcidMusic.helpers.decorators import authorized_users_only
-from AcidMusic.helpers.filters import command
-from AcidMusic.helpers.filters import other_filters
-from AcidMusic.helpers.gets import get_file_name
-from AcidMusic.services.callsmusic import callsmusic
-from AcidMusic.services.callsmusic import client as USER
-from AcidMusic.services.converter.converter import convert
-from AcidMusic.services.downloaders import youtube
-from AcidMusic.services.queues import queues
+from VCsMusicBot.config import ARQ_API_KEY
+from VCsMusicBot.config import BOT_NAME as bn
+from VCsMusicBot.config import DURATION_LIMIT
+from VCsMusicBot.config import UPDATES_CHANNEL as updateschannel
+from VCsMusicBot.config import que
+from VCsMusicBot.function.admins import admins as a
+from VCsMusicBot.helpers.admins import get_administrators
+from VCsMusicBot.helpers.channelmusic import get_chat_id
+from VCsMusicBot.helpers.errors import DurationLimitError
+from VCsMusicBot.helpers.decorators import errors
+from VCsMusicBot.helpers.decorators import authorized_users_only
+from VCsMusicBot.helpers.filters import command, other_filters
+from VCsMusicBot.helpers.gets import get_file_name
+from VCsMusicBot.services.callsmusic import callsmusic
+from VCsMusicBot.services.callsmusic.callsmusic import client as USER
+from VCsMusicBot.services.converter.converter import convert
+from VCsMusicBot.services.downloaders import youtube
+from VCsMusicBot.services.queues import queues
 
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
@@ -539,7 +534,7 @@ async def play(_, message: Message):
         )
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/5b0cd3ffeaedb93ce4af5.jpg"
+        thumb_name = "https://telegra.ph/file/cf19dda907391656338eb.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -903,7 +898,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "AcidMusic"
+        user.first_name = "VCsMusicBot"
     usar = user
     wew = usar.id
     try:
@@ -966,7 +961,7 @@ async def deezer(client: Client, message_: Message):
         url = songs.result[0].url
         artist = songs.result[0].artist
         duration = songs.result[0].duration
-        thumbnail = "https://telegra.ph/file/5b0cd3ffeaedb93ce4af5.jpg"
+        thumbnail = "https://telegra.ph/file/cf19dda907391656338eb.png"
 
     except:
         await res.edit("Found Literally Nothing, You Should Work On Your English!")
@@ -1041,7 +1036,7 @@ async def jiosaavn(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "AcidMusic"
+        user.first_name = "VCsMusicBot"
     usar = user
     wew = usar.id
     try:
