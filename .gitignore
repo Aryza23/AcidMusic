@@ -1,8 +1,11 @@
-.env
+
+*.pyc
+*.raw
 *.log
-venv/
-.idea/
 *.session
-raw_files/
-downloads/
-__pycache__/
+unknown_errors.txt
+*.session-journal
+.env
+test.py
+config.py
+__pycache__
