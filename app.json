@@ -1,9 +1,9 @@
 {
-  "name": "VCsMusicBot",
+  "name": "AcidMusic",
   "logo": "https://telegra.ph/file/5a24274c6a6455f9a8d8f.png",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/LushaiMusic/VCsMusicBot",
+  "repository": "https://github.com/idzero23/AcidMusic",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
@@ -23,15 +23,19 @@
       "required": false,
       "value": ""
     },
+    "OWNER": {
+      "description": "Telegram Id Of yours!",
+      "required": true
+    },
     "SUPPORT_GROUP": {
       "description": "Your MusicPlayer support group without @ [Leave this if you don't have one]",
       "required": false,
-      "value": "tgVCSets"
+      "value": "Idzero_gr"
     },
     "PROJECT_NAME": {
       "description": "Your MusicPlayer project Name.",
       "required": false,
-      "value": "VCsMusicBot"
+      "value": "AcidMusic"
     },
     "ASSISTANT_NAME": {
       "description": "Your MusicPlayer's assistant Username without @.",
@@ -39,7 +43,7 @@
     },
     "ARQ_API_KEY": {
       "description": "Get from @ARQRobot.",
-      "required": false,
+      "required": true,
       "value": "GUGFNB-XPUZDX-XGCKTJ-UZXHBZ-ARQ"
     },    
     "BG_IMAGE": {
@@ -50,11 +54,26 @@
     "UPDATES_CHANNEL": {
       "description": "Updates Channel without @ [Leave this if you don't have one].",
       "required": false,
-      "value": "ZauteKm"
+      "value": "idzeroid"
     },    
     "API_ID": {
       "description": "App ID from my.telegram.org/apps",
       "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Your Heroku App Name!",
+      "required": true,
+      "value": ""
+    },
+    "HEROKU_API_KEY": {
+      "description": "Your Heroku Api Key!",
+      "required": true,
+      "value": ""
+    },
+    "UPSTREAM_REPO": {
+      "description": "Github Repo Url. Only needed if you are using your own Fork!",
+      "required": false,
+      "value": "https://github.com/idzero23/AcidMusic"
     },
     "PMPERMIT": {
       "description": "Change to turn off",
