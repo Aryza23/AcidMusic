@@ -19,7 +19,7 @@ API_ID = int(getenv("API_ID", ""))
 API_HASH = getenv("API_HASH")
 BOT_USERNAME = getenv("BOT_USERNAME")
 # Your Telegram User ID
-OWNER = int(os.environ.get("OWNER"))
+OWNER = int(getenv("OWNER"))
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "Idzeroobot")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "idzero_gr")
 PROJECT_NAME = getenv("PROJECT_NAME", "AcidMusic")
