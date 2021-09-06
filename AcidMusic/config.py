@@ -26,3 +26,9 @@ PMPERMIT = getenv("PMPERMIT", None)
 LOG_GRP = getenv("LOG_GRP", None)
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ !").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
+# Updator Configs
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME", None)
+HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/idzero23/AcidMusic")
+U_BRANCH = "main"
+HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
