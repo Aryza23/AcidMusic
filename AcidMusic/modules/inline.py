@@ -19,7 +19,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 import asyncio
 from pyrogram.handlers import InlineQueryHandler
 from youtubesearchpython import VideosSearch
-from utils import USERNAME
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, errors
 from config import Config
