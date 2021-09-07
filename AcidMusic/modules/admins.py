@@ -134,7 +134,7 @@ async def admincache(client, message: Message):
 REPO_ = UPSTREAM_REPO
 BRANCH_ = U_BRANCH
 
-@Client.on_message(filters.command("update") & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("update") & filters.user(OWNER))
 async def updatebot(_, message: Message):
     msg = await message.reply_text("`Updating Module is Starting! Please Wait...`")
     try:
@@ -247,7 +247,7 @@ def _check_heroku(func):
 
     return heroku_cli
 
-@Client.on_message(filters.command("logs") & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("logs") & filters.user(OWNER))
 @_check_heroku
 async def logswen(client: Client, message: Message, happ):
     msg = await message.reply_text("`Please Wait For a Moment!`")
@@ -257,7 +257,7 @@ async def logswen(client: Client, message: Message, happ):
 
 
 # Restart Your Bot
-@Client.on_message(filters.command("restart") & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("restart") & filters.user(OWNER))
 @_check_heroku
 async def restart(client: Client, message: Message, hap):
     msg = await message.reply_text("`Restarting Now! Please wait...`")
@@ -265,7 +265,7 @@ async def restart(client: Client, message: Message, hap):
 
 
 # Set Heroku Var
-@Client.on_message(filters.command("setvar") & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("setvar") & filters.user(OWNER))
 @_check_heroku
 async def setvar(client: Client, message: Message, app_):
     msg = await message.reply_text(message, "`Please Wait...!`")
@@ -287,7 +287,7 @@ async def setvar(client: Client, message: Message, app_):
 
 
 # Delete Heroku Var
-@Client.on_message(filters.command("delvar") & filters.user(BOT_OWNER))
+@Client.on_message(filters.command("delvar") & filters.user(OWNER))
 @_check_heroku
 async def delvar(client: Client, message: Message, app_):
     msg = await message.reply_text(message, "`Please Wait...!`")
