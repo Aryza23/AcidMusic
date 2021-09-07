@@ -150,9 +150,9 @@ async def updatebot(_, message: Message):
         else:
             origin = repo.create_remote("upstream", REPO_)
         origin.fetch()
-        repo.create_head(U_BRANCH, origin.refs.master)
-        repo.heads.master.set_tracking_branch(origin.refs.master)
-        repo.heads.master.checkout(True)
+        repo.create_head(U_BRANCH, origin.refs.main)
+        repo.heads.main.set_tracking_branch(origin.refs.main)
+        repo.heads.main.checkout(True)
     if repo.active_branch.name != U_BRANCH:
         return await msg.edit(
             f"Hmmm... Seems Like You Are Using Custom Branch Named `{repo.active_branch.name}`! Please Use `{U_BRANCH}` To Make This Works!"
@@ -185,7 +185,7 @@ async def updatebot(_, message: Message):
         else:
             remote = repo.create_remote("heroku", HEROKU_URL)
         try:
-            remote.push(refspec="HEAD:refs/heads/master", force=True)
+            remote.push(refspec="HEAD:refs/heads/main", force=True)
         except BaseException as error:
             await msg.edit(f"**Updater Error** \nTraceBack : `{error}`")
             return repo.__del__()
