@@ -21,7 +21,7 @@ from pyrogram.handlers import InlineQueryHandler
 from youtubesearchpython import VideosSearch
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, errors
-from AcidMusic.config import config
+from config import *
 
 REPLY_MESSAGE=Config.REPLY_MESSAGE
 buttons = [
