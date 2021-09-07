@@ -18,3 +18,7 @@ psutil
 wget
 tswift
 heroku3
+motor
+dnspython
+bs4
+gitpython
