@@ -62,6 +62,7 @@ $ python3 -m AcidMusic
 - Userbot auto join
 - Channel Music Play
 - Keyboard selection support for YouTube play
+- And more!.
 
 ### Commands for Group 👥
 #### For all in group
