@@ -1,10 +1,10 @@
 pyrogram
 heroku3
 TgCrypto
-py-tgcalls==0.5.5
+pytgcalls
 python-dotenv
 youtube_dl
-youtube_search_python==1.4.6
+youtube_search_python
 requests
 aiohttp
 aiofiles
