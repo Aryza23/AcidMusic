@@ -18,3 +18,4 @@ psutil
 wget
 python-arq
 gitpython
+tswift
