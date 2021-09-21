@@ -18,7 +18,7 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 
-from AcidMusic.config import DURATION_LIMIT, BOT_USERNAME
+from AcidMusic.config import DURATION_LIMIT, BOT_USERNAME as bn
 from AcidMusic.modules.play import arq
 
 
@@ -59,7 +59,7 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = "**🎵 Uploaded by @{BOT_USERNAME} .**"
+        rep = f"**🎵 Uploaded by @{bn} .**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(dur_arr[i]) * secmul
