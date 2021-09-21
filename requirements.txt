@@ -17,4 +17,4 @@ future
 psutil
 wget
 python-arq
-git
+gitpython
