@@ -17,7 +17,7 @@ from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
 from AcidMusic.config import ARQ_API_KEY
-from AcidMusic.config import BOT_NAME as bn
+from AcidMusic.config import BOT_NAME as bn, BOT_USERNAME
 from AcidMusic.config import DURATION_LIMIT
 from AcidMusic.config import UPDATES_CHANNEL as updateschannel
 from AcidMusic.config import que
@@ -35,11 +35,14 @@ from AcidMusic.services.converter.converter import convert
 from AcidMusic.services.downloaders import youtube
 from AcidMusic.services.queues import queues
 
+
 aiohttpsession = aiohttp.ClientSession()
 chat_id = None
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
 DISABLED_GROUPS = []
 useer ="NaN"
+
+
 def cb_admin_check(func: Callable) -> Callable:
     async def decorator(client, cb):
         admemes = a.get(cb.message.chat.id)
@@ -101,14 +104,12 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text((205, 590), f"Duration: {duration}", (255, 255, 255), font=font)
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
-    draw.text(
-        (205, 670),
-        f"Added By: {requested_by}",
-        (255, 255, 255),
+    font = ImageFont.truetype("etc/Roboto-Regular.ttf", 57)
+    draw.text((30, 535), f"Playing here", (0, 0, 0), font=font)
+    font = ImageFont.truetype("etc/Roboto-Medium.ttf", 75)
+    draw.text((30, 615),
+        f"{title[:20]}...",
+        (0, 0, 0),
         font=font,
     )
     img.save("final.png")
@@ -116,7 +117,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     os.remove("background.png")
 
 
-@Client.on_message(filters.command("playlist") & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["playlist", f"playlist@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def playlist(client, message):
     global que
     if message.chat.id in DISABLED_GROUPS:
@@ -184,7 +185,7 @@ def r_ply(type_):
     return mar
 
 
-@Client.on_message(filters.command("current") & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["current", f"current@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def ee(client, message):
     if message.chat.id in DISABLED_GROUPS:
         return
@@ -196,7 +197,7 @@ async def ee(client, message):
         await message.reply("No VC instances running in this chat")
 
 
-@Client.on_message(filters.command("player") & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["player", f"player@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def settings(client, message):
     if message.chat.id in DISABLED_GROUPS:
@@ -429,7 +430,7 @@ async def m_cb(b, cb):
             await cb.answer("Chat is not connected!", show_alert=True)
 
 
-@Client.on_message(command("play") & other_filters)
+@Client.on_message(command(["play", f"@{BOT_USERNAME}"]) & other_filters)
 async def play(_, message: Message):
     global que
     global useer
@@ -617,9 +618,9 @@ async def play(_, message: Message):
 
             while j < 5:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ╚ <b>Duration</b> - {results[j]['duration']}\n"
-                toxxt += f" ╚ <b>Views</b> - {results[j]['views']}\n"
-                toxxt += f" ╚ <b>Channel</b> - {results[j]['channel']}\n\n"
+                toxxt += f" ├ ☉️ <b>Duration</b> - {results[j]['duration']}\n"
+                toxxt += f" ├ ☉️ <b>Views</b> - {results[j]['views']}\n"
+                toxxt += f" └ ☉️ <b>Channel</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -633,7 +634,7 @@ async def play(_, message: Message):
                         InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="❌", callback_data="cls")],
+                    [InlineKeyboardButton(text="🗑️ Close", callback_data="cls")],
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
@@ -657,7 +658,7 @@ async def play(_, message: Message):
 
             except Exception as e:
                 await lel.edit(
-                    "Song not found.Try another song or maybe spell it properly."
+                    "❌ Song not found.Try another song or maybe spell it properly."
                 )
                 print(str(e))
                 return
@@ -683,7 +684,7 @@ async def play(_, message: Message):
                         InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
                         InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
                     ],
-                    [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="🗑️ Close", callback_data="cls")],
                 ]
             )
             requested_by = message.from_user.first_name
@@ -1185,7 +1186,7 @@ async def lol_cb(b, cb):
     if cb.from_user.id != useer_id:
         await cb.answer("You ain't the person who requested to play the song!", show_alert=True)
         return
-    await cb.message.edit("Hang On... Player Starting")
+    await cb.message.edit("🔁 Connecting to vcg")
     x=int(x)
     try:
         useer_name = cb.message.reply_to_message.from_user.first_name
