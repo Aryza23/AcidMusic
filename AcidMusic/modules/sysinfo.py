@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>
 import asyncio
 from datetime import datetime
 from time import time
-from AcidMusic import Config
+from AcidMusic import config
 from pyrogram import Client, filters, emoji
 from pyrogram.types import Message
 import psutil
