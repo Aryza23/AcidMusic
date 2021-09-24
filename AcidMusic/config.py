@@ -36,3 +36,4 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY", None)
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/idzero23/AcidMusic")
 U_BRANCH = "main"
 HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
+msg = {}
