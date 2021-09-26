@@ -292,6 +292,23 @@ async def p_cb(b, cb):
                 msg += f"\n- Req by {usr}\n"
         await cb.message.edit(msg)
 
+@Client.on_message(filters.command(["volume", f"volume@{USERNAME}"]) & filters.group & other_filters)
+async def set_vol(_, m: Message):
+    group_call = mp.group_call
+    if not group_call.is_connected:
+        k=await m.reply_text(f"{emoji.ROBOT} **Didn't Joined Any Voice Chat!**")
+        await mp.delete(k)
+        await mp.delete(m)
+        return
+    if len(m.command) < 2:
+        k=await m.reply_text(f"{emoji.ROBOT} **You Forgot To Pass Volume (0-200)!**")
+        await mp.delete(k)
+        await mp.delete(m)
+        return
+    await group_call.set_my_volume(int(m.command[1]))
+    k=await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} **Volume Set To {m.command[1]}!**")
+    await mp.delete(k)
+    await mp.delete(m)
 
 @Client.on_callback_query(
     filters.regex(pattern=r"^(play|pause|skip|leave|puse|resume|menu|cls)$")
