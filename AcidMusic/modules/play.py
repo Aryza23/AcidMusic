@@ -292,7 +292,7 @@ async def p_cb(b, cb):
                 msg += f"\n- Req by {usr}\n"
         await cb.message.edit(msg)
 
-@Client.on_message(filters.command(["volume", f"volume@{USERNAME}"]) & filters.group & other_filters)
+@Client.on_message(filters.command(["volume", f"volume@{BOT_USERNAME}"]) & filters.group & other_filters)
 async def set_vol(_, m: Message):
     group_call = mp.group_call
     if not group_call.is_connected:
