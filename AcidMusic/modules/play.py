@@ -577,10 +577,8 @@ async def play(_, message: Message):
                 secmul *= 60
             if (dur / 60) > DURATION_LIMIT:
                  await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
-                 return
-        except:
-            pass        
-                keyboard = InlineKeyboardMarkup(
+                 return        
+             keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
@@ -665,8 +663,6 @@ async def play(_, message: Message):
                 if (dur / 60) > DURATION_LIMIT:
                      await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
                      return
-            except:
-                pass
                  keyboard = InlineKeyboardMarkup(
                 [
                     [
@@ -816,9 +812,7 @@ async def ytplay(_, message: Message):
             secmul *= 60
         if (dur / 60) > DURATION_LIMIT:
              await lel.edit(f"❌ Videos longer than {DURATION_LIMIT} minutes aren't allowed to play!")
-             return
-    except:
-        pass    
+             return    
         keyboard = InlineKeyboardMarkup(
         [
             [
