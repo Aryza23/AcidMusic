@@ -219,7 +219,7 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    filters.command("musicplayer") & ~filters.edited & ~filters.bot & ~filters.private
+    filters.command("mpl") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @authorized_users_only
 async def hfmm(_, message):
@@ -230,7 +230,7 @@ async def hfmm(_, message):
         return
     if len(message.command) != 2:
         await message.reply_text(
-            "I only recognize `/musicplayer on` and /musicplayer `off only`"
+            "I only recognize `/mpl on` and /mpl `off only`"
         )
         return
     status = message.text.split(None, 1)[1]
@@ -257,7 +257,7 @@ async def hfmm(_, message):
         )
     else:
         await message.reply_text(
-            "I only recognize `/musicplayer on` and /musicplayer `off only`"
+            "I only recognize `/mpl on` and /mpl `off only`"
         )    
         
 
@@ -900,7 +900,7 @@ async def deezer(client: Client, message_: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "VCsMusicBot"
+        user.first_name = "AcidMusic"
     usar = user
     wew = usar.id
     try:
@@ -1075,7 +1075,7 @@ async def jiosaavn(client: Client, message_: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @VCsMusicPlayer to your Group and try again</b>",
+                        "\n\nOr add manually to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
