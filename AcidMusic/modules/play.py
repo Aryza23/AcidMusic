@@ -620,7 +620,7 @@ async def play(_, message: Message):
             while j < 5:
                 toxxt += f"{emojilist[j]} <b>յսժսl - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
                 toxxt += f" ├-☉️⇝ <b>∂υяαѕι</b> - {results[j]['duration']}\n"
-                toxxt += f" ├-☉️⇝ <b>νιєω</b> - {results[j]['views']}\n"
+                toxxt += f" ├-☉️⇝ <b>νιєωѕ</b> - {results[j]['views']}\n"
                 toxxt += f" └-☉️⇝ <b>cнαηηєℓ</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
