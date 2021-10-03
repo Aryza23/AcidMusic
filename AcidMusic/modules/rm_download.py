@@ -1,13 +1,13 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from Acidmusic.helpers.filters import command
+from AcidMusic.helpers.filters import command
 from AcidMusic.helpers.decorators import sudo_users_only, errors
 
 downloads = os.path.realpath("downloads")
 raw = os.path.realpath("raw_files")
 
-@Client.on_message(command(["rmd", "rmdownload"]) & ~filters.edited)
+@Client.on_message(command(["rmd", "deletebokep"]) & ~filters.edited)
 @errors
 @sudo_users_only
 async def clear_downloads(_, message: Message):
