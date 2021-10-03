@@ -615,27 +615,27 @@ async def play(_, message: Message):
             toxxt = "**Select the song you want to play**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣",]
+            emojilist = ["➊","➋","➌","➍","➎",]
 
             while j < 5:
                 toxxt += f"{emojilist[j]} <b>Title - [{results[j]['title']}](https://youtube.com{results[j]['url_suffix']})</b>\n"
-                toxxt += f" ├ ☉️ <b>Duration</b> - {results[j]['duration']}\n"
-                toxxt += f" ├ ☉️ <b>Views</b> - {results[j]['views']}\n"
-                toxxt += f" └ ☉️ <b>Channel</b> - {results[j]['channel']}\n\n"
+                toxxt += f" ├-☉️⇝ <b>Duration</b> - {results[j]['duration']}\n"
+                toxxt += f" ├-☉️⇝ <b>Views</b> - {results[j]['views']}\n"
+                toxxt += f" └-☉️⇝ <b>Channel</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("1️⃣", callback_data=f'plll 0|{query}|{user_id}'),
-                        InlineKeyboardButton("2️⃣", callback_data=f'plll 1|{query}|{user_id}'),
-                        InlineKeyboardButton("3️⃣", callback_data=f'plll 2|{query}|{user_id}'),
+                        InlineKeyboardButton("➊", callback_data=f'plll 0|{query}|{user_id}'),
+                        InlineKeyboardButton("➋", callback_data=f'plll 1|{query}|{user_id}'),
+                        InlineKeyboardButton("➌", callback_data=f'plll 2|{query}|{user_id}'),
                     ],
                     [
-                        InlineKeyboardButton("4️⃣", callback_data=f'plll 3|{query}|{user_id}'),
-                        InlineKeyboardButton("5️⃣", callback_data=f'plll 4|{query}|{user_id}'),
+                        InlineKeyboardButton("➍", callback_data=f'plll 3|{query}|{user_id}'),
+                        InlineKeyboardButton("➎", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="🗑️ Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="✗ Close", callback_data="cls")],
                 ]
             )       
             await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
