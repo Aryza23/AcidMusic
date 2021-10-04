@@ -20,6 +20,7 @@ API_HASH = getenv("API_HASH")
 BOT_USERNAME = getenv("BOT_USERNAME")
 # Your Telegram User ID
 OWNER = int(getenv("OWNER"))
+THUMB_IMG = getenv("THUMB_IMG", "https://telegra.ph/file/9112bfb78741fd9fa6afe.jpg")
 ASSISTANT_NAME = getenv("ASSISTANT_NAME", "Idzeroobot")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "idzero_gr")
 PROJECT_NAME = getenv("PROJECT_NAME", "AcidMusic")
