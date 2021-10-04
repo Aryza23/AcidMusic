@@ -16,6 +16,5 @@ Pillow
 future
 psutil
 wget
-python-arq
 gitpython
 tswift
