@@ -480,7 +480,7 @@ async def play(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add assistant to your Group and try again</b>",
+                        "\n\nOr manually add assistant to your Group and try again or go @idzeroidsupport and ask admin</b>",
                     )
     try:
         await USER.get_chat(chid)
@@ -638,7 +638,7 @@ async def play(_, message: Message):
                 ]
             )       
             await message.reply_photo(
-                photo=f"https://telegra.ph/file/9112bfb78741fd9fa6afe.jpg", caption=toxxt, reply_markup=keyboard
+                photo=f"https://telegra.ph/file/aea6dbd8e75d439c6f253.jpg", caption=toxxt, reply_markup=keyboard
             )
 
             await lel.delete()
@@ -784,7 +784,7 @@ async def ytplay(_, message: Message):
                     # print(e)
                     await lel.edit(
                         f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add assistant to your Group and try again</b>",
+                        "\n\nOr manually add assistant to your Group and try again go @idzeroidsupport and ask admin</b>",
                     )
     try:
         await USER.get_chat(chid)
