@@ -638,7 +638,7 @@ async def play(_, message: Message):
                 ]
             )       
             await message.reply_photo(
-                photo=f"https://telegra.ph/file/aea6dbd8e75d439c6f253.jpg", caption=toxxt, reply_markup=keyboard
+                photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg", caption=toxxt, reply_markup=keyboard
             )
 
             await lel.delete()
