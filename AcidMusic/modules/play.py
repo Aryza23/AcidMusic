@@ -602,7 +602,7 @@ async def play(_, message: Message):
             )
         # veez project
         try:
-            toxxt = "**Select the song you want to play**\n\n"
+            toxxt = "\n"
             j = 0
             useer=user_name
             emojilist = ["🔘","🔘","🔘","🔘","🔘",]
