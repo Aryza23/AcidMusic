@@ -625,7 +625,7 @@ async def play(_, message: Message):
                 toxxt += f" └-☉️⇝ <b>cнαηηєℓ</b> - {results[j]['channel']}\n\n"
 
                 j += 1            
-            koyboard = InlineKeyboardMarkup(
+            keyboard = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("➊", callback_data=f'plll 0|{query}|{user_id}'),
