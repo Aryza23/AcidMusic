@@ -16,6 +16,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 
+from AcidMusic.config import THUMB_IMG
 from AcidMusic.config import ARQ_API_KEY
 from AcidMusic.config import BOT_NAME as bn, BOT_USERNAME
 from AcidMusic.config import DURATION_LIMIT
@@ -638,10 +639,14 @@ async def play(_, message: Message):
                     [InlineKeyboardButton(text="✗ Close", callback_data="cls")],
                 ]
             )       
-            await lel.edit(toxxt,reply_markup=koyboard,disable_web_page_preview=True)
-            # WHY PEOPLE ALWAYS LOVE PORN ?? (A point to think)
+            await message.reply_photo(
+                photo=f"{THUMB_IMG}", caption=toxxt, reply_markup=keyboard
+            )
+
+            await lel.delete()
+            # veez project
             return
-            # Returning to pornhub
+            # veez project
         except:
             await lel.edit("No Enough results to choose.. Starting direct play..")
                         
