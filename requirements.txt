@@ -18,3 +18,4 @@ psutil
 wget
 gitpython
 tswift
+fake_user_agent
