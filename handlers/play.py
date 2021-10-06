@@ -513,6 +513,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📚 Daftar putar", "playlist"),
+                ],
+                [
                     InlineKeyboardButton("🕹️ Menu", callback_data="menu"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -559,6 +561,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📚 Daftar putar", "playlist"),
+                ],
+                [
                     InlineKeyboardButton("🕹️ Menu", callback_data="menu"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -640,6 +644,8 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📚 Daftar putar", "playlist"),
+                ],
+                [
                     InlineKeyboardButton("🕹️ Menu", callback_data="menu"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -742,6 +748,8 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("📚 Daftar putar", "playlist"),
+                ],
+                [
                     InlineKeyboardButton("🕹️ Menu", callback_data="menu"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -887,6 +895,8 @@ async def ytplay(_, message: Message):
             [
                 [
                     InlineKeyboardButton("📚 Daftar putar", "playlist"),
+                ],
+                [
                     InlineKeyboardButton("🕹️ Menu", callback_data="menu"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
