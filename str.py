@@ -2,13 +2,13 @@ import asyncio
 
 from pyrogram import Client
 
-print("Enter your app information from my.telegram.org/apps below.")
+
+api_id = input("Enter Your API ID: \n")
+api_hash = input("Enter Your API HASH : \n")
 
 
 async def main():
-    async with Client(
-        ":memory:", api_id=int(input("API ID:")), api_hash=input("API HASH:")
-    ) as app:
+    async with Client(":memory:", api_id=int(input("API ID:")), api_hash=input("API HASH:")) as app:
         print(await app.export_session_string())
 
 

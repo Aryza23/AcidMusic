@@ -1,7 +1,6 @@
 pyrogram
-heroku3
-TgCrypto
-pytgcalls
+tgcrypto
+py-tgcalls==0.5.5
 python-dotenv
 youtube_dl
 youtube_search_python
@@ -12,10 +11,7 @@ asyncio
 youtube_search
 search_engine_parser
 ffmpeg
-Pillow
+pillow
 future
 psutil
 wget
-gitpython
-tswift
-fake_user_agent
