@@ -402,8 +402,6 @@ async def m_cb(b, cb):
 async def play(_, message: Message):
     global que
     global useer
-    if message.chat.id in DISABLED_GROUPS:
-        return    
     lel = await message.reply("🔄 <b>Processing</b>")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
