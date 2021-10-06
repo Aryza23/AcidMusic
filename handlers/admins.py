@@ -10,7 +10,7 @@ from helpers.channelmusic import get_chat_id
 from helpers.decorators import authorized_users_only, errors
 from helpers.filters import command, other_filters
 from callsmusic import callsmusic
-from callsmusic.queues import queues
+from queues import queues
 from config import BOT_USERNAME
 
 
