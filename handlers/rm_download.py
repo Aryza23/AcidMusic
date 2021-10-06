@@ -1,8 +1,8 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from AcidMusic.helpers.filters import command
-from AcidMusic.helpers.decorators import errors, authorized_users_only
+from helpers.filters import command
+from helpers.decorators import errors, authorized_users_only
 
 downloads = os.path.realpath("downloads")
 raw = os.path.realpath("raw_files")
