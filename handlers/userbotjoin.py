@@ -1,11 +1,11 @@
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
 import asyncio
-from AcidMusic.helpers.decorators import authorized_users_only, errors
-from AcidMusic.services.callsmusic.callsmusic import client as USER
-from AcidMusic.config import SUDO_USERS
+from helpers.decorators import authorized_users_only, errors
+from services.callsmusic.callsmusic import client as USER
+from config import SUDO_USERS
 
-@Client.on_message(filters.command(["userbotjoin"]) & ~filters.private & ~filters.bot)
+@Client.on_message(filters.command(["ubj"]) & ~filters.private & ~filters.bot)
 @authorized_users_only
 @errors
 async def addchannel(client, message):
@@ -34,7 +34,7 @@ async def addchannel(client, message):
         print(e)
         await message.reply_text(
             f"<b>🛑 Flood Wait Error 🛑 \n User {user.first_name} couldn't join your group due to heavy join requests for userbot! Make sure user is not banned in group."
-            "\n\nOr manually add @idzeroassistantbot to your Group and try again</b>",
+            "\n\nOr go @idzeroidsupport and ask owner to add assistant music to your Group and try again</b>",
         )
         return
     await message.reply_text(
@@ -42,7 +42,7 @@ async def addchannel(client, message):
     )
 
 
-@USER.on_message(filters.group & filters.command(["userbotleave"]))
+@USER.on_message(filters.group & filters.command(["ubl"]))
 @authorized_users_only
 async def rem(USER, message):
     try:
@@ -54,7 +54,7 @@ async def rem(USER, message):
         )
         return
     
-@Client.on_message(filters.command(["userbotleaveall"]))
+@Client.on_message(filters.command(["ublall"]))
 async def bye(client, message):
     if message.from_user.id in SUDO_USERS:
         left=0
