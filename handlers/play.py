@@ -579,7 +579,7 @@ async def play(_, message: Message):
             toxxt = "**__Please Select A Song To Play :__**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["🕳","🕳","🕳","🕳","🕳"]
+            emojilist = ["🐦","🐦","🐦","🐦","🐦"]
 
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}](https://youtube.com{results[j]['url_suffix']})...\n"
