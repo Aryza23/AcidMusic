@@ -12,7 +12,7 @@ from pyrogram import Client, filters
 from typing import Callable
 from helpers.channelmusic import get_chat_id
 from callsmusic import callsmusic
-from queues import queues
+from callsmusic.queues import queues
 from helpers.admins import get_administrators
 from youtube_search import YoutubeSearch
 from callsmusic.callsmusic import client as USER
