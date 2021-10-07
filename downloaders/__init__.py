@@ -1,3 +1,1 @@
-from downloaders import youtube
-
-__all__ = ["youtube"]
+from downloaders.youtube import download
