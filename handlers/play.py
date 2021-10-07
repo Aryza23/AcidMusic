@@ -44,15 +44,67 @@ def cb_admin_check(func: Callable) -> Callable:
     return decorator                                                                       
                                           
                                                                                     
+
+import os
+from asyncio.queues import QueueEmpty
+from os import path
+from typing import Callable
+
+import aiofiles
+import aiohttp
+import ffmpeg
+import requests
+from PIL import Image, ImageDraw, ImageFont
+from pyrogram import Client, filters
+from pyrogram.errors import UserAlreadyParticipant
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from youtube_search import YoutubeSearch
+
+import converter
+from cache.admins import admins as a
+from callsmusic import callsmusic
+from callsmusic.callsmusic import client as USER
+from callsmusic.queues import queues
+from config import (
+    ASSISTANT_NAME,
+    BOT_NAME,
+    BOT_USERNAME,
+    DURATION_LIMIT,
+    GROUP_SUPPORT,
+    THUMB_IMG,
+    UPDATES_CHANNEL,
+    que,
+)
+from downloaders import youtube
+from helpers.admins import get_administrators
+from helpers.channelmusic import get_chat_id
+from helpers.decorators import authorized_users_only
+from helpers.filters import command, other_filters
+from helpers.gets import get_file_name
+
+aiohttpsession = aiohttp.ClientSession()
+chat_id = None
+useer = "NaN"
+DISABLED_GROUPS = []
+
+
+def cb_admin_check(func: Callable) -> Callable:
+    async def decorator(client, cb):
+        admemes = a.get(cb.message.chat.id)
+        if cb.from_user.id in admemes:
+            return await func(client, cb)
+        else:
+            await cb.answer("💡 only admin can tap this button !", show_alert=True)
+            return
+    return decorator
+
+
 def transcode(filename):
     ffmpeg.input(filename).output(
-        "input.raw",
-        format="s16le",
-        acodec="pcm_s16le",
-        ac=2,
-        ar="48k"
-    ).overwrite_output().run() 
+        "input.raw", format="s16le", acodec="pcm_s16le", ac=2, ar="48k"
+    ).overwrite_output().run()
     os.remove(filename)
+
 
 # Convert seconds to mm:ss
 def convert_seconds(seconds):
@@ -78,14 +130,14 @@ def changeImageSize(maxWidth, maxHeight, image):
     newImage = image.resize((newWidth, newHeight))
     return newImage
 
-async def generate_cover(requested_by, title, views, duration, thumbnail):
+
+async def generate_cover(title, thumbnail):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
                 f = await aiofiles.open("background.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-
     image1 = Image.open("./background.png")
     image2 = Image.open("etc/foreground.png")
     image3 = changeImageSize(1280, 720, image1)
@@ -95,21 +147,13 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text(
-        (205, 590), f"Duration: {duration}", (255, 255, 255), font=font
-    )
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
-    draw.text((205, 670),
-        f"Added By: {requested_by}",
-        (255, 255, 255),
-        font=font,
-    )
+    font = ImageFont.truetype("etc/Roboto-Medium.ttf", 60)
+    font2 = ImageFont.truetype("etc/finalfont.ttf", 75)
+    draw.text((25, 535), "Playing here...", (0, 0, 0), font=font)
+    draw.text((25, 620), f"{title[:25]}...", (0, 0, 0), font=font2)
     img.save("final.png")
     os.remove("temp.png")
     os.remove("background.png")
-
 
 @Client.on_message(command(["playlist", f"playlist@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 async def playlist(client, message):
