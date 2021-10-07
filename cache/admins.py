@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import Dict, List
 
 
 admins: Dict[int, List[int]] = {}
@@ -11,4 +11,4 @@ def set(chat_id: int, admins_: List[int]):
 def get(chat_id: int) -> List[int]:
     if chat_id in admins:
         return admins[chat_id]
-    return []  
+    return []
