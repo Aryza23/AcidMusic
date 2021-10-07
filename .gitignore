@@ -6,3 +6,8 @@ __pycache__
 .vscode
 raw_files
 downloads
+venv
+local.env
+*.jpg
+*png
+unknown_errors.txt
