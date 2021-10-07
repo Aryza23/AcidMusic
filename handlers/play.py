@@ -507,8 +507,9 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
+                    InlineKeyboardButton(text="Menu", callback_data="menu"),
                 ],
+                [InlineKeyboardButton("❌ Close", "cls")],
             ]
         )
         file_name = get_file_name(audio)
@@ -553,8 +554,9 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
+                    InlineKeyboardButton(text="Menu", callback_data="menu"),
                 ],
+                [InlineKeyboardButton("❌ Close", "cls")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -634,8 +636,9 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
+                    InlineKeyboardButton(text="Menu", callback_data="menu"),
                 ],
+                [InlineKeyboardButton("❌ Close", "cls")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -775,8 +778,9 @@ async def ytplay(_, message: Message):
             [
                 [
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
+                    InlineKeyboardButton(text="Menu", callback_data="menu"),
                 ],
+                [InlineKeyboardButton("❌ Close", "cls")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -879,8 +883,9 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
+                    InlineKeyboardButton(text="Menu", callback_data="menu"),
                 ],
+                [InlineKeyboardButton("❌ Close", "cls")],
             ]
         )
     requested_by = useer_name
