@@ -426,7 +426,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IdzXartez"
+        user.first_name = "helper"
     usar = user
     wew = usar.id
     try:
@@ -592,7 +592,7 @@ async def play(_, message: Message):
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}](https://youtube.com{results[j]['url_suffix']})...\n"
                 toxxt += f" ├-☉️⇝  **∂υяαѕι** - {results[j]['duration']}\n"
-                toxxt += f" └-☉️  __Powered by 🎼️⋆ IdzXartez ✘ 𝙈𝙪𝙨𝙞𝙘 __\n\n"
+                toxxt += f" └-☉️  __Powered by 🎼️ IdzXartez __\n\n"
 
                 j += 1            
             keyboard = InlineKeyboardMarkup(
@@ -707,7 +707,7 @@ async def ytplay(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "IdzXartez"
+        user.first_name = "helper"
     usar = user
     wew = usar.id
     try:
@@ -842,137 +842,6 @@ async def ytplay(_, message: Message):
         return await lel.delete()
     
 
-@Client.on_message(filters.command("dplay") & filters.group & ~filters.edited)
-async def deezer(client: Client, message_: Message):
-    if message_.chat.id in DISABLED_GROUPS:
-        return
-    global que
-    lel = await message_.reply("🔁 **Processing Song**")
-    administrators = await get_administrators(message_.chat)
-    chid = message_.chat.id
-    try:
-        user = await USER.get_me()
-    except:
-        user.first_name = "ElrixXMusic"
-    usar = user
-    wew = usar.id
-    try:
-        # chatdetails = await USER.get_chat(chid)
-        await client.get_chat_member(chid, wew)
-    except:
-        for administrator in administrators:
-            if administrator == message_.from_user.id:
-                if message_.chat.title.startswith("Channel Music: "):
-                    await lel.edit(
-                        f"<b>Remember To Add @{ASSISTANT_NAME} To Your Channel.</b>",
-                    )
-                    pass
-                try:
-                    invitelink = await client.export_chat_invite_link(chid)
-                except:
-                    await lel.edit(
-                        "<b>Add Me As Your Group Admin First.</b>",
-                    )
-                    return
-
-                try:
-                    await USER.join_chat(invitelink)
-                    await USER.send_message(
-                        message_.chat.id, "🤖 I Joined This Group For Playing Music In VC."
-                    )
-                    await lel.edit(
-                        "<b>Helper Userbot Joined Your Chat.</b>",
-                    )
-
-                except UserAlreadyParticipant:
-                    pass
-                except Exception:
-                    # print(e)
-                    await lel.edit(
-                        f"<b>⛑ Flood Wait Error ⛑\n{user.first_name} Can'T Join Your Group Due To Many Join Requests For Userbot !! Make Sure The User Is Not Banned In The Group."
-                        f"\n\nOr Add @{ASSISTANT_NAME} Manually To Your Groups And Try Again.</b>",
-                    )
-    try:
-        await USER.get_chat(chid)
-        # lmoa = await client.get_chat_member(chid,wew)
-    except:
-        await lel.edit(
-            f"<i>{user.first_name} Why Is My Assistant Banned, Ask The Group Admin To Add The @{ASSISTANT_NAME} Assistant Again To The Group :).</i>"
-        )
-        return
-    requested_by = message_.from_user.first_name
-
-    text = message_.text.split(" ", 1)
-    queryy = text[1]
-    query = queryy
-    res = lel
-    await res.edit(f"**Looking For A Song** `{query}` **From Deezer**")
-    try:
-        songs = await arq.deezer(query,1)
-        if not songs.ok:
-            await message_.reply_text(songs.result)
-            return
-        title = songs.result[0].title
-        url = songs.result[0].url
-        artist = songs.result[0].artist
-        duration = songs.result[0].duration
-        thumbnail = "https://telegra.ph/file/fa2cdb8a14a26950da711.png"
-
-    except:
-        await res.edit("**No Song Found !!**")
-        return
-    try:    
-        duuration= round(duration / 60)
-        if duuration > DURATION_LIMIT:
-            await cb.message.edit(f"**Music Is Longer Than** `{DURATION_LIMIT}` **Minutes Not Allowed To Play**")
-            return
-    except:
-        pass    
-    
-    keyboard = InlineKeyboardMarkup(
-        [
-            [InlineKeyboardButton(text="📍 Channel", url="https://t.me/artezid")],
-        ]
-    )
-    file_path = await converter.convert(wget.download(url))
-    await res.edit("📥 **Generating Thumbnail**")
-    await generate_cover(requested_by, title, artist, duration, thumbnail)
-    chat_id = get_chat_id(message_.chat)
-    if chat_id in callsmusic.pytgcalls.active_calls:
-        await res.edit("Adding In Queue")
-        position = await queues.put(chat_id, file=file_path)
-        qeue = que.get(chat_id)
-        s_name = title
-        r_by = message_.from_user
-        loc = file_path
-        appendable = [s_name, r_by, loc]
-        qeue.append(appendable)
-        await res.edit_text(f"🎼 **The Song You Asked For Is In Line** `{position}`")
-    else:
-        await res.edit_text(f"🎼️ **Playing...**")
-
-        que[chat_id] = []
-        qeue = que.get(chat_id)
-        s_name = title
-        r_by = message_.from_user
-        loc = file_path
-        appendable = [s_name, r_by, loc]
-        qeue.append(appendable)
-        try:
-            callsmusic.pytgcalls.join_group_call(chat_id, file_path)
-        except:
-            res.edit("Voice Chat Group Is Not Active, I Can'T Join.")
-            return
-
-    await res.delete()
-
-    m = await client.send_photo(
-        chat_id=message_.chat.id,
-        reply_markup=keyboard,
-        photo="final.png",
-        caption=f"🎼️ **Playing Song** [{title}]({url}) **Via Deezer**",
-    )
-    os.remove("final.png")
 
 
 @Client.on_callback_query(filters.regex(pattern=r"plll"))
