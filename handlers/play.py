@@ -579,7 +579,7 @@ async def play(_, message: Message):
             toxxt = "**__Please Select A Song To Play :__**\n\n"
             j = 0
             useer=user_name
-            emojilist = ["🐦","🐦","🐦","🐦","🐦"]
+            emojilist = ["🕊","🕊","🕊","🕊","🕊"]
 
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}](https://youtube.com{results[j]['url_suffix']})...\n"
@@ -598,7 +598,7 @@ async def play(_, message: Message):
                         InlineKeyboardButton("➍", callback_data=f'plll 3|{query}|{user_id}'),
                         InlineKeyboardButton("➎", callback_data=f'plll 4|{query}|{user_id}'),
                     ],
-                    [InlineKeyboardButton(text="🗑 ✗ Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="✗ Close", callback_data="cls")],
                 ]
             )       
             await message.reply_photo(
