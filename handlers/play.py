@@ -100,8 +100,8 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     draw.text(
         (25, 590), f"Duration: {duration}", (0, 0, 0), font=font
     )
-    draw.text((25, 630), f"Views: {views}", (0, 0, 0), font=font)
-    draw.text((25, 670),
+    draw.text((25, 530), f"Views: {views}", (0, 0, 0), font=font)
+    draw.text((25, 570),
         f"Added By: {requested_by}",
         (0, 0, 0),
         font=font,
@@ -536,7 +536,7 @@ async def play(_, message: Message):
     elif urls:
         query = toxt
         await lel.edit("🔎 **mencari lagu** 🔎")
-        ydl_opts = {"format": "bestaudio/best"}
+        ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -576,7 +576,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        ydl_opts = {"format": "bestaudio/best"}
+        ydl_opts = {"format": "bestaudio[ext=m4a]"}
         
         try:
           results = YoutubeSearch(query, max_results=5).to_dict()
@@ -869,7 +869,7 @@ async def ytplay(_, message: Message):
         query += " " + str(i)
     print(query)
     await lel.edit("🔁 **Menghubungkan...**")
-    ydl_opts = {"format": "bestaudio/best"}
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         url = f"https://youtube.com{results[0]['url_suffix']}"
