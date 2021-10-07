@@ -506,14 +506,9 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⛑ Groups", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("📍 Movie Channel", url=f"https://t.me/artezid"),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
                 ],
-                [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
         file_name = get_file_name(audio)
@@ -557,14 +552,9 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⛑ Groups", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("📍 Movie Channel", url=f"https://t.me/artezid"),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
                 ],
-                [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -643,14 +633,9 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⛑ Groups", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("📍 Movie Channel", url=f"https://t.me/artezid"),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
                 ],
-                [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -789,14 +774,9 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⛑ Groups", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("📍 Movie Channel", url=f"https://t.me/artezid"),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
                 ],
-                [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -898,14 +878,9 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⛑ Groups", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("📍 Movie Channel", url=f"https://t.me/artezid"),
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="closed")
                 ],
-                [
-                    InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/IdzXartez"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
             ]
         )
     requested_by = useer_name
