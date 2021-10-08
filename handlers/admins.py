@@ -23,7 +23,7 @@ async def update_admin(client, message: Message):
         ],
     )
     await message.reply_photo(
-                photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg"
+                photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
