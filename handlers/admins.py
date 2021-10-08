@@ -22,7 +22,8 @@ async def update_admin(client, message: Message):
             for member in await message.chat.get_members(filter="administrators")
         ],
     )
-    await message.reply_text("""✅ Bot **Refreshed !**\n\n**• Admin list** has been **updated !**""",
+    await message.reply_photo(
+                photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg"
       reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -36,10 +37,7 @@ async def update_admin(client, message: Message):
             ]
         )
    )
-    await message.reply_photo(
-                photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg", reply_markup=reply_markup
-            )
-
+    
 @Client.on_message(command("pause") & other_filters)
 @errors
 @authorized_users_only
