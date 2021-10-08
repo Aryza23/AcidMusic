@@ -30,8 +30,8 @@ async def update_admin(client, message: Message):
                 [
                     InlineKeyboardButton("Group Support", url=f"https://t.me/idzeroidsupport"),
                     InlineKeyboardButton("Created By", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton("Help", url=f"https//t.me/idzeroid_bot")],
+                    InlineKeyboardButton("Help", url=f"https//t.me/idzeroid_bot")
+                ]
             ]
         )
    )
@@ -125,8 +125,8 @@ async def admincache(client, message: Message):
                 [
                     InlineKeyboardButton("Group Support", url=f"https://t.me/idzeroidsupport"),
                     InlineKeyboardButton("Created By", url=f"https://t.me/idzxartez"),
-                ],
-                [InlineKeyboardButton("Help", url=f"https//t.me/idzeroid_bot")],
+                    InlineKeyboardButton("Help", url=f"https//t.me/idzeroid_bot")
+                ]
             ]
         )
    )
