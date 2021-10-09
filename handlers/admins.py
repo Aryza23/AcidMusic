@@ -24,7 +24,7 @@ async def update_admin(client, message: Message):
     )
     await message.reply_photo(
                 photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg",
-              caption=f"**✅ Reload Sukses admin telah di update...**",
+              caption=f"**✅ Reload Sukses __admin telah di update...__**",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -118,7 +118,7 @@ async def admincache(client, message: Message):
     )
     await message.reply_photo(
                 photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg",
-              caption=f"**♻ Refreash Cache Sukses admin cache di segarkan...**",
+              caption=f"**♻ Refresh Cache Sukses __admin cache di segarkan...__**",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
