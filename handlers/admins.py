@@ -24,12 +24,12 @@ async def update_admin(client, message: Message):
     )
     await message.reply_photo(
                 photo=f"https://telegra.ph/file/ad4eca95908b25fafe7f2.jpg",
-              caption=f"**✅ Reload Sukses __admin telah di update...__**",
+              caption=f"**☑ Reload Sukses __admin telah di update...__**",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Group Support", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("Created By", url=f"https://t.me/idzxartez")
+                    InlineKeyboardButton("Support", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton("Owner", url=f"https://t.me/idzxartez")
                 ]
             ]
         )
@@ -122,8 +122,8 @@ async def admincache(client, message: Message):
       reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Group Support", url=f"https://t.me/idzeroidsupport"),
-                    InlineKeyboardButton("Created By", url=f"https://t.me/idzxartez"),
+                    InlineKeyboardButton("Support", url=f"https://t.me/idzeroidsupport"),
+                    InlineKeyboardButton("Owner", url=f"https://t.me/idzxartez"),
                 ]
             ]
         )
