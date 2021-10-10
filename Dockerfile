@@ -1,6 +1,5 @@
 FROM python:3.9.7-slim-buster
 RUN apt-get update && apt-get upgrade -y
-RUN python3 -m pip install --upgrade
 RUN apt-get install git curl python3-pip ffmpeg -y
 RUN python3 -m pip install -U pip
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
