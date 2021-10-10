@@ -1,10 +1,11 @@
 pyrogram
 tgcrypto
 py-tgcalls==0.5.5
-youtube_dl
-matplotlib
 python-dotenv
-youtube_search_python==1.4.6
+youtube_dl
+pytube
+ytdl
+youtube_search_python
 requests
 aiohttp
 aiofiles
@@ -18,7 +19,8 @@ psutil
 wget
 motor
 dnspython
-
+yt_dlp
 httpx==0.13.3
-
+matplotlib
 gitpython
+git+https://github.com/yt-dlp/yt-dlp.git@release
