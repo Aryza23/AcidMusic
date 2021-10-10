@@ -3,7 +3,6 @@ tgcrypto
 py-tgcalls==0.5.5
 youtube_dl
 matplotlib
-git+https://github.com/yt-dlp/yt-dlp.git@release
 python-dotenv
 youtube_search_python==1.4.6
 requests
@@ -21,5 +20,5 @@ motor
 dnspython
 
 httpx==0.13.3
-heroku3
+
 gitpython
