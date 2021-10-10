@@ -23,4 +23,4 @@ yt_dlp
 httpx==0.13.3
 heroku3
 gitpython
-git+https://github.com/xrisk/webdl.git
+webdl
