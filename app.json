@@ -93,5 +93,16 @@
       "required": true,
       "value": "120"
     }
-  }
+    },
+    "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/xrisk/heroku-opus"
+    }
+  ]
 }
