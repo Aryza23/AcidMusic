@@ -1,7 +1,6 @@
 pyrogram
 TgCrypto
-py-Ultroid==2021.10.11.1
-pytgcalls==3.0.0.dev19
+py-tgcalls==0.5.5
 python-dotenv
 youtube_search_python==1.4.6
 requests
