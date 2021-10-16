@@ -6,6 +6,8 @@ from pyrogram import Client as app, filters
 from helpers.filters import command
 from config import BOT_USERNAME
 
+BOT_USERNAME : "idzeroid_bot"
+
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -34,6 +36,7 @@ async def ytsearch(_, message: Message):
             text += f"**Views :** {results[i]['views']}\n"
             text += f"**Channel :** {results[i]['channel']}\n"
             text += f"https://www.youtube.com{results[i]['url_suffix']}\n\n"
+            text += f"**Powered By :** __@IdzXartez__\n"
             i += 1
         await m.edit(text, disable_web_page_preview=True)
     except Exception as e:
