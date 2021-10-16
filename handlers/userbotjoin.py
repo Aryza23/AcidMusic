@@ -43,7 +43,6 @@ async def addchannel(client, message):
 
 
 @USER.on_message(filters.group & filters.command(["ubl"]))
-@authorized_users_only
 async def rem(USER, message):
     try:
         await USER.leave_chat(message.chat.id)
