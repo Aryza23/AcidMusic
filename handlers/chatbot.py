@@ -6,7 +6,7 @@ import asyncio
 
 from pyrogram import filters
 from time import time
-from AcidMusic import bot
+from main import bot
 import AcidMusic.handlers.sql.kuki_sql as sql
 
 
