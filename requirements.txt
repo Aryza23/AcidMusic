@@ -1,6 +1,6 @@
 pyrogram
 TgCrypto
-py-tgcalls==3.0.0.dev19
+py-tgcalls==0.8.1b24
 python-dotenv
 youtube_search_python==1.4.6
 requests
