@@ -4,7 +4,7 @@ py-tgcalls==0.5.5
 python-dotenv
 youtube_search_python==1.4.6
 requests
-aiohttp
+aiohttp[speedups]
 aiofiles
 asyncio
 youtube_search
@@ -15,3 +15,7 @@ future
 psutil
 wget
 yt_dlp
+bs4
+dnspython
+SQLAlchemy
+
