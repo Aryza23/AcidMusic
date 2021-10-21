@@ -24,10 +24,10 @@ GROUP_SUPPORT = getenv("GROUP_SUPPORT", "idzeroidsupport")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "idzeroid")
 OWNER_NAME = getenv("OWNER_NAME", "idzxartez") # isi dengan username kamu tanpa simbol @
 DEV_NAME = getenv("DEV_NAME", "idzxartez")
-BROADCAST_AS_COPY = getenv("BROADCAST_AS_COPY", None)
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "False"))
 PMPERMIT = getenv("PMPERMIT", None)
 LOG_CHANNEL = getenv("LOG_CHANNEL", None)
-DATABASE_URL = getenv("DATABASE_URL", None)
+DATABASE_URL = os.environ.get("DATABASE_URL")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
 
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
