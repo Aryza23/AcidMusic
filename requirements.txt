@@ -18,4 +18,7 @@ yt_dlp
 bs4
 dnspython
 SQLAlchemy
-
+motor
+httpx==0.13.3
+heroku3
+gitpython
