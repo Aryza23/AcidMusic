@@ -23,6 +23,7 @@ GROUP_SUPPORT = getenv("GROUP_SUPPORT", "idzeroidsupport")
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "idzeroid")
 OWNER_NAME = getenv("OWNER_NAME", "idzxartez") # isi dengan username kamu tanpa simbol @
 DEV_NAME = getenv("DEV_NAME", "idzxartez")
+BROADCAST_AS_COPY = getenv("BROADCAST_AS_COPY", None)
 PMPERMIT = getenv("PMPERMIT", None)
 DATABASE_URL = getenv("DATABASE_URL", None)
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
