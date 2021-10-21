@@ -31,7 +31,7 @@ DATABASE_URL = getenv("DATABASE_URL", None)
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
 
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
-
+OWNER_ID = int(os.environ.get("OWNER_ID"))
 SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
 U_BRANCH = "main"
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
