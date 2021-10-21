@@ -24,6 +24,7 @@ UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "idzeroid")
 OWNER_NAME = getenv("OWNER_NAME", "idzxartez") # isi dengan username kamu tanpa simbol @
 DEV_NAME = getenv("DEV_NAME", "idzxartez")
 PMPERMIT = getenv("PMPERMIT", None)
+DATABASE_URL = getenv("DATABASE_URL", "mongodb+srv://kentot:kentot@cluster0.7mbhj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
 
