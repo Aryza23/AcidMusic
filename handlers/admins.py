@@ -102,7 +102,9 @@ async def skip(client, message):
         skip = qeue.pop(0)
     if not qeue:
         return
-    await client.send_message(message.chat.id, f"⏭️ __You've skipped to the next song__")
+    await client.send_message(
+        message.chat.id, "⏭️ __You've skipped to the next song__"
+    )
 
 
 @Client.on_message(command(["auth", f"auth@{BOT_USERNAME}"]) & other_filters)

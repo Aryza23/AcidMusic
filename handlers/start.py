@@ -46,9 +46,7 @@ async def start(client: Client, message: Message):
         )
     )
 
-@Client.on_message(
-    command(["helpmusic", f"helpmusic@idzeroid_bot"]) & filters.group & ~filters.edited
-)
+@Client.on_message(command(["helpmusic", "helpmusic@idzeroid_bot"]) & filters.group & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_text(
         f"""<b>👋🏻 **Hello** {message.from_user.mention()}</b>

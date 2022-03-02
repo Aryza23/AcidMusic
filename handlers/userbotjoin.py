@@ -27,7 +27,7 @@ async def addchannel(client, message):
         await USER.send_message(message.chat.id, "🤖: i'm joined here for playing music on voice chat")
         await USER.send_sticker(message.chat.id, "CAACAgUAAx0CRJlrWAABAkcSYWoVTyDAC0f6A28bYQbTufgQEdQAAlYDAAK1iPFWodSjgGfzQs8hBA")
     except UserAlreadyParticipant:
-        await message.reply_text(f"<b>✅ userbot already joined chat</b>")
+        await message.reply_text("<b>✅ userbot already joined chat</b>")
     except Exception as e:
         print(e)
         await message.reply_text(
@@ -35,7 +35,7 @@ async def addchannel(client, message):
             "\n\nor manually add assistant to your Group and try again</b>",
         )
         return
-    await message.reply_text(f"<b>✅ userbot successfully joined chat</b>")
+    await message.reply_text("<b>✅ userbot successfully joined chat</b>")
 
 
 @Client.on_message(command(["userbotleave", f"userbotleave@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
